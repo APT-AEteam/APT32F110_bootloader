@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\apt32f110x\apt32f110x.cdkws">
+  <int Value="14" Name="m_selectedTab"/>
+  <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\apt32f110x\apt32f110x.cdkws" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\apt32f110x\src\main.c" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="21" Name="FirstVisibleLine"/>
+      <int Value="48" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\apt32f110x\src\include\bootloader.h" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="57" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\apt32f110x\src\bootloader.c" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="516" Name="FirstVisibleLine"/>
+      <int Value="537" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks">
+        <wxString Value="152:3"/>
+        <wxString Value="163:3"/>
+      </wxArrayString>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\components\chip\include\csp_syscon.h" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="697" Name="FirstVisibleLine"/>
+      <int Value="716" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\components\chip\drivers\sys\startup.S" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="92" Name="FirstVisibleLine"/>
+      <int Value="93" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\board\src\interrupt.c" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="46" Name="FirstVisibleLine"/>
+      <int Value="79" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\board\src\board_config.c" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="22" Name="FirstVisibleLine"/>
+      <int Value="53" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\components\chip\include\csp_gpio.h" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="108" Name="FirstVisibleLine"/>
+      <int Value="99" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\components\chip\drivers\gpio.c" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="111" Name="FirstVisibleLine"/>
+      <int Value="1" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks">
+        <wxString Value="359:3"/>
+      </wxArrayString>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\board\gcc_flash.ld" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\components\csi\include\drv\eflash.h" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\components\chip\drivers\sys\sys_clk.c" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="127" Name="FirstVisibleLine"/>
+      <int Value="137" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\components\chip\drivers\sys\sys_clk.h" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="138" Name="FirstVisibleLine"/>
+      <int Value="148" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\components\chip\drivers\sys\tick.c" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="16" Name="FirstVisibleLine"/>
+      <int Value="41" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks">
+        <wxString Value="61:3"/>
+      </wxArrayString>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\components\chip\drivers\bt.c" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="46" Name="FirstVisibleLine"/>
+      <int Value="81" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks">
+        <wxString Value="56:3"/>
+      </wxArrayString>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\components\chip\include\csp_bt.h" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="288" Name="FirstVisibleLine"/>
+      <int Value="313" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\components\csi\include\core\core_802.h" Name="FileName"/>
+      <wxString Value="apt32f110x" Name="ProjectName"/>
+      <int Value="644" Name="FirstVisibleLine"/>
+      <int Value="669" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks">
+        <wxString Value="669:3"/>
+        <wxString Value="1529:3"/>
+      </wxArrayString>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="1" Name="Count"/>
+    <SerializedObject Name="Breakpoint0">
+      <wxString Value="F:\lhy\00-APT\00-bootloader\apt32f110\bootloader_apt32f110x\APT32F110_bootloader\apt32f110x\src\bootloader.c" Name="file"/>
+      <int Value="307" Name="lineno"/>
+      <wxString Value="" Name="function_name"/>
+      <wxString Value="" Name="memory_address"/>
+      <int Value="4" Name="bp_type"/>
+      <int Value="0" Name="watchpoint_type"/>
+      <wxString Value="" Name="watchpt_data"/>
+      <CData Name="commandlist"/>
+      <bool Value="0" Name="regex"/>
+      <bool Value="0" Name="is_temp"/>
+      <bool Value="1" Name="is_enabled"/>
+      <int Value="0" Name="ignore_number"/>
+      <wxString Value="" Name="conditions"/>
+      <int Value="0" Name="origin"/>
+    </SerializedObject>
+  </SerializedObject>
+</Session>
