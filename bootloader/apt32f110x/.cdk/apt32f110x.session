@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="F:\lhy\00-APT\255-git\bootloader\APT32F110_bootloader\bootloader\apt32f110x\apt32f110x.cdkws">
+  <int Value="0" Name="m_selectedTab"/>
+  <wxString Value="F:\lhy\00-APT\255-git\bootloader\APT32F110_bootloader\bootloader\apt32f110x\apt32f110x.cdkws" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray"/>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+</Session>

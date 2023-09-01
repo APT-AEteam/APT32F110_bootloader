@@ -1,0 +1,1413 @@
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           CSKY
+  Version:                           0x1
+  Entry point address:               0x108
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          1594880 (bytes into file)
+  Flags:                             0x21000000
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         3
+  Size of section headers:           40 (bytes)
+  Number of section headers:         20
+  Section header string table index: 17
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .text             PROGBITS        00000000 001000 000e50 00  AX  0   0 1024
+  [ 2] .rodata           PROGBITS        00000e50 001e50 000038 00   A  0   0  1
+  [ 3] .data             PROGBITS        20000000 002000 000018 00  WA  0   0  4
+  [ 4] .bss              NOBITS          20000018 002018 000130 00  WA  0   0  4
+  [ 5] .debug_info       PROGBITS        00000000 002018 0250f2 00      0   0  1
+  [ 6] .debug_abbrev     PROGBITS        00000000 02710a 002068 00      0   0  1
+  [ 7] .debug_loc        PROGBITS        00000000 029172 0038ef 00      0   0  1
+  [ 8] .debug_aranges    PROGBITS        00000000 02ca68 0005c0 00      0   0  8
+  [ 9] .debug_ranges     PROGBITS        00000000 02d028 000ce8 00      0   0  1
+  [10] .debug_macinfo    PROGBITS        00000000 02dd10 148f6d 00      0   0  1
+  [11] .debug_line       PROGBITS        00000000 176c7d 00569a 00      0   0  1
+  [12] .debug_str        PROGBITS        00000000 17c317 006590 01  MS  0   0  1
+  [13] .comment          PROGBITS        00000000 1828a7 000042 01  MS  0   0  1
+  [14] .csky_stack_size  PROGBITS        00000000 1828f0 0006dc 00      0   0 16
+  [15] .csky.attributes  CSKY_ATTRIBUTES 00000000 182fcc 000020 00      0   0  1
+  [16] .debug_frame      PROGBITS        00000000 182fec 000f3c 00      0   0  4
+  [17] .shstrtab         STRTAB          00000000 185529 0000d4 00      0   0  1
+  [18] .symtab           SYMTAB          00000000 183f28 000fd0 10     19 173  4
+  [19] .strtab           STRTAB          00000000 184ef8 000631 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  p (processor specific)
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x001000 0x00000000 0x00000000 0x00e88 0x00e88 R E 0x1000
+  LOAD           0x002000 0x20000000 0x00000e88 0x00018 0x00018 RW  0x1000
+  LOAD           0x002018 0x20000018 0x20000018 0x00000 0x00130 RW  0x1000
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text .rodata 
+   01     .data 
+   02     .bss 
+======================================================================
+Csky GNU Linker
+
+======================================================================
+
+Section Cross References
+
+	Obj/src_bootloader.o(.text.bootloader_wait_syncpin_release) refers to drivers_sys_tick.o(.text.mdelay) for mdelay
+	Obj/src_bootloader.o(.text.bootloader_program_loading) refers to drivers_sys_tick.o(.text.mdelay) for mdelay
+	Obj/src_bootloader.o(.text.bootloader_jump_function) refers to drivers_sys_tick.o(.text.mdelay) for mdelay
+	Obj/src_bootloader.o(.text.bootloader_bt_irqhandler) refers to Obj/src_bootloader.o(.text.bootloader_clear_rec_buffer) for bootloader_clear_rec_buffer
+	Obj/src_bootloader.o(.text.bootloader_program_init) refers to Obj/src_bootloader.o(.text.bootloader_clear_rec_buffer) for bootloader_clear_rec_buffer
+	Obj/src_bootloader.o(.text.bootloader_program_loading) refers to Obj/src_bootloader.o(.text.bootloader_clear_rec_buffer) for bootloader_clear_rec_buffer
+	src_interrupt.o(.text.bt0_int_handler) refers to Obj/src_bootloader.o(.text.bootloader_bt_irqhandler) for bootloader_bt_irqhandler
+	src_interrupt.o(.text.uart1_int_handler) refers to Obj/src_bootloader.o(.text.bootloader_prog_irqhandler) for bootloader_prog_irqhandler
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_bootloader.o(.text.bootloader_printf_init) for bootloader_printf_init
+	Obj/src_bootloader.o(.text.bootloader_program_option) refers to Obj/src_bootloader.o(.text.bootloader_prog_init) for bootloader_prog_init
+	Obj/src_bootloader.o(.text.bootloader_program_flash) refers to Obj/src_bootloader.o(.text.bootloader_send_ack) for bootloader_send_ack
+	Obj/src_bootloader.o(.text.bootloader_program_loading) refers to Obj/src_bootloader.o(.text.bootloader_send_ack) for bootloader_send_ack
+	Obj/src_bootloader.o(.text.bootloader_program_flash) refers to Obj/src_bootloader.o(.text.bootloader_send_back_num) for bootloader_send_back_num
+	Obj/src_bootloader.o(.text.bootloader_program_verify) refers to Obj/src_bootloader.o(.text.bootloader_send_back_num) for bootloader_send_back_num
+	Obj/src_bootloader.o(.text.bootloader_program_verify) refers to Obj/src_bootloader.o(.text.bootloader_send_back_str) for bootloader_send_back_str
+	Obj/src_bootloader.o(.text.bootloader_program_loading) refers to Obj/src_bootloader.o(.text.bootloader_send_back_str) for bootloader_send_back_str
+	Obj/src_bootloader.o(.text.bootloader_jump_function) refers to Obj/src_bootloader.o(.text.bootloader_send_back_str) for bootloader_send_back_str
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_bootloader.o(.text.bootloader_send_back_str) for bootloader_send_back_str
+	Obj/src_bootloader.o(.text.bootloader_program_loading) refers to Obj/src_bootloader.o(.text.bootloader_program_flash) for bootloader_program_flash
+	Obj/src_bootloader.o(.text.bootloader_program_option) refers to Obj/src_bootloader.o(.text.bootloader_wait_syncpin_release) for bootloader_wait_syncpin_release
+	Obj/src_bootloader.o(.text.bootloader_program_verify) refers to Obj/src_bootloader.o(.text.bootloader_cal_image_checknum) for bootloader_cal_image_checknum
+	Obj/src_bootloader.o(.text.bootloader_program_loading) refers to Obj/src_bootloader.o(.text.bootloader_program_verify) for bootloader_program_verify
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_bootloader.o(.text.bootloader_program_option) for bootloader_program_option
+	Obj/src_bootloader.o(.text.bootloader_program_loading) refers to Obj/src_bootloader.o(.text.bootloader_get_cmd_value) for bootloader_get_cmd_value
+	Obj/src_bootloader.o(.text.bootloader_program_loading) refers to Obj/src_bootloader.o(.text.bootloader_program_init) for bootloader_program_init
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_bootloader.o(.text.bootloader_program_loading) for bootloader_program_loading
+	Obj/src_bootloader.o(.text.bootloader_jump_function) refers to Obj/src_bootloader.o(.text.bootloader_jump_to_app) for bootloader_jump_to_app
+	Obj/src_bootloader.o(.text.bootloader_jump_function) refers to Obj/src_bootloader.o(.text.bootloader_check_jump_addr) for bootloader_check_jump_addr
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_bootloader.o(.text.bootloader_jump_function) for bootloader_jump_function
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_bootloader.o(.text.bootloader_reset) for bootloader_reset
+	Obj/src_main.o(.text.startup.main) refers to Obj/src_bootloader.o(.text.bootloader_system_init) for bootloader_system_init
+	Obj/src_main.o(.text.startup.main) refers to drivers_bt.o(.text.csi_bt_timer_init) for csi_bt_timer_init
+	Obj/src_main.o(.text.startup.main) refers to drivers_bt.o(.text.csi_bt_start) for csi_bt_start
+	drivers_ifc.o(.text.csi_ifc_program) refers to drivers_ifc.o(.text.csi_ifc_get_status) for csi_ifc_get_status
+	Obj/src_bootloader.o(.text.bootloader_program_flash) refers to drivers_ifc.o(.text.csi_ifc_program) for csi_ifc_program
+	drivers_iwdt.o(.text.csi_iwdt_open) refers to drivers_iwdt.o(.text.delay_ums) for delay_ums
+	Obj/src_bootloader.o(.text.bootloader_program_init) refers to drivers_iwdt.o(.text.csi_iwdt_open) for csi_iwdt_open
+	Obj/src_bootloader.o(.text.bootloader_program_loading) refers to drivers_iwdt.o(.text.csi_iwdt_close) for csi_iwdt_close
+	Obj/src_bootloader.o(.text.bootloader_system_init) refers to drivers_iwdt.o(.text.csi_iwdt_close) for csi_iwdt_close
+	Obj/src_bootloader.o(.text.bootloader_program_flash) refers to drivers_iwdt.o(.text.csi_iwdt_feed) for csi_iwdt_feed
+	Obj/src_bootloader.o(.text.bootloader_program_init) refers to drivers_iwdt.o(.text.csi_iwdt_feed) for csi_iwdt_feed
+	Obj/src_bootloader.o(.text.bootloader_program_loading) refers to drivers_iwdt.o(.text.csi_iwdt_feed) for csi_iwdt_feed
+	Obj/src_bootloader.o(.text.bootloader_printf_init) refers to drivers_pinctrl.o(.text.csi_pin_set_mux) for csi_pin_set_mux
+	Obj/src_bootloader.o(.text.bootloader_prog_init) refers to drivers_pinctrl.o(.text.csi_pin_set_mux) for csi_pin_set_mux
+	Obj/src_bootloader.o(.text.bootloader_wait_syncpin_release) refers to drivers_pinctrl.o(.text.csi_pin_set_mux) for csi_pin_set_mux
+	Obj/src_bootloader.o(.text.bootloader_wait_syncpin_release) refers to drivers_pinctrl.o(.text.csi_pin_read) for csi_pin_read
+	drivers_sys_sys_clk.o(.text.csi_bootloader_sysclk_config) refers to drivers_sys_clk.o(.text.csi_hfosc_enable) for csi_hfosc_enable
+	Obj/src_bootloader.o(.text.bootloader_system_init) refers to drivers_sys_sys_clk.o(.text.csi_bootloader_sysclk_config) for csi_bootloader_sysclk_config
+	Obj/src_bootloader.o(.text.bootloader_printf_init) refers to drivers_sys_sys_clk.o(.text.soc_clk_enable) for soc_clk_enable
+	Obj/src_bootloader.o(.text.bootloader_prog_init) refers to drivers_sys_sys_clk.o(.text.soc_clk_enable) for soc_clk_enable
+	drivers_bt.o(.text.csi_bt_timer_init) refers to drivers_sys_sys_clk.o(.text.soc_clk_enable) for soc_clk_enable
+	Obj/src_bootloader.o(.text.bootloader_send_ack) refers to drivers_uart.o(.text.csi_uart_putc) for csi_uart_putc
+	Obj/src_bootloader.o(.text.bootloader_send_back_num) refers to drivers_uart.o(.text.csi_uart_putc) for csi_uart_putc
+	Obj/src_bootloader.o(.text.bootloader_send_back_str) refers to drivers_uart.o(.text.csi_uart_putc) for csi_uart_putc
+	Obj/src_bootloader.o(.text.bootloader_wait_syncpin_release) refers to drivers_sys_tick.o(.text.mdelay) for mdelay
+	Obj/src_bootloader.o(.text.bootloader_program_loading) refers to drivers_sys_tick.o(.text.mdelay) for mdelay
+	Obj/src_bootloader.o(.text.bootloader_jump_function) refers to drivers_sys_tick.o(.text.mdelay) for mdelay
+	Obj/src_bootloader.o(.text.bootloader_program_init) refers to memset_fast.o(.text) for memset
+	drivers_sys_mem_init.o(.text.__main) refers to memset_fast.o(.text) for memset
+	Obj/src_bootloader.o(.text.bootloader_program_flash) refers to memcpy_fast.o(.text) for memcpy
+	Obj/src_bootloader.o(.text.bootloader_program_loading) refers to memcpy_fast.o(.text) for memcpy
+	drivers_sys_mem_init.o(.text.__main) refers to memcpy_fast.o(.text) for memcpy
+
+
+======================================================================
+
+Removing Unused input sections from the image. 
+
+	Removing .text(Obj/src_bootloader.o), (0 bytes).
+	Removing .data(Obj/src_bootloader.o), (0 bytes).
+	Removing .bss(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.delayus_Bycode(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.mdelay(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_clear_rec_buffer(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_bt_irqhandler(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_prog_irqhandler(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_flash_read_word(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.bootloader_flash_read_word(Obj/src_bootloader.o), (4 bytes).
+	Removing .text.unlikely.bootloader_printf_init(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_prog_init(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_send_ack(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_send_back_num(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_send_back_str(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_program_flash(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_wait_syncpin_release(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_cal_image_checknum(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_program_verify(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_program_option(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_get_cmd_value(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_program_init(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_program_loading(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_jump_to_app(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_check_jump_addr(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_jump_function(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_reset(Obj/src_bootloader.o), (0 bytes).
+	Removing .text.unlikely.bootloader_system_init(Obj/src_bootloader.o), (0 bytes).
+	Removing .text(Obj/src_main.o), (0 bytes).
+	Removing .data(Obj/src_main.o), (0 bytes).
+	Removing .bss(Obj/src_main.o), (0 bytes).
+	Removing .text.unlikely.main(Obj/src_main.o), (0 bytes).
+	Removing .text(rewind.o), (12 bytes).
+	Removing .data(rewind.o), (0 bytes).
+	Removing .bss(rewind.o), (0 bytes).
+	Removing .text.unlikely(rewind.o), (0 bytes).
+	Removing .comment(rewind.o), (67 bytes).
+	Removing .csky.attributes(rewind.o), (32 bytes).
+	Removing .text(exit.o), (16 bytes).
+	Removing .data(exit.o), (0 bytes).
+	Removing .bss(exit.o), (0 bytes).
+	Removing .text.unlikely(exit.o), (0 bytes).
+	Removing .comment(exit.o), (67 bytes).
+	Removing .csky.attributes(exit.o), (32 bytes).
+	Removing .text(fclose.o), (58 bytes).
+	Removing .data(fclose.o), (0 bytes).
+	Removing .bss(fclose.o), (0 bytes).
+	Removing .text.unlikely(fclose.o), (0 bytes).
+	Removing .comment(fclose.o), (67 bytes).
+	Removing .csky.attributes(fclose.o), (32 bytes).
+	Removing .text(syscalls.o), (736 bytes).
+	Removing .data(syscalls.o), (0 bytes).
+	Removing .bss(syscalls.o), (0 bytes).
+	Removing .text.unlikely(syscalls.o), (0 bytes).
+	Removing .comment(syscalls.o), (67 bytes).
+	Removing .csky.attributes(syscalls.o), (32 bytes).
+	Removing .text(fopen.o), (160 bytes).
+	Removing .data(fopen.o), (0 bytes).
+	Removing .bss(fopen.o), (0 bytes).
+	Removing .text.unlikely(fopen.o), (0 bytes).
+	Removing .comment(fopen.o), (67 bytes).
+	Removing .csky.attributes(fopen.o), (32 bytes).
+	Removing .text(fwrite.o), (54 bytes).
+	Removing .data(fwrite.o), (0 bytes).
+	Removing .bss(fwrite.o), (0 bytes).
+	Removing .text.unlikely(fwrite.o), (0 bytes).
+	Removing .comment(fwrite.o), (67 bytes).
+	Removing .csky.attributes(fwrite.o), (32 bytes).
+	Removing .text(ftell.o), (14 bytes).
+	Removing .data(ftell.o), (0 bytes).
+	Removing .bss(ftell.o), (0 bytes).
+	Removing .text.unlikely(ftell.o), (0 bytes).
+	Removing .comment(ftell.o), (67 bytes).
+	Removing .csky.attributes(ftell.o), (32 bytes).
+	Removing .text(fputs.o), (56 bytes).
+	Removing .data(fputs.o), (0 bytes).
+	Removing .bss(fputs.o), (0 bytes).
+	Removing .text.unlikely(fputs.o), (0 bytes).
+	Removing .comment(fputs.o), (67 bytes).
+	Removing .csky.attributes(fputs.o), (32 bytes).
+	Removing .text(fgetc.o), (52 bytes).
+	Removing .data(fgetc.o), (0 bytes).
+	Removing .bss(fgetc.o), (0 bytes).
+	Removing .text.unlikely(fgetc.o), (0 bytes).
+	Removing .comment(fgetc.o), (67 bytes).
+	Removing .csky.attributes(fgetc.o), (32 bytes).
+	Removing .text(fputc.o), (32 bytes).
+	Removing .data(fputc.o), (0 bytes).
+	Removing .bss(fputc.o), (0 bytes).
+	Removing .text.unlikely(fputc.o), (0 bytes).
+	Removing .comment(fputc.o), (67 bytes).
+	Removing .csky.attributes(fputc.o), (32 bytes).
+	Removing .text(fread.o), (54 bytes).
+	Removing .data(fread.o), (0 bytes).
+	Removing .bss(fread.o), (0 bytes).
+	Removing .text.unlikely(fread.o), (0 bytes).
+	Removing .comment(fread.o), (67 bytes).
+	Removing .csky.attributes(fread.o), (32 bytes).
+	Removing .text(fseek.o), (26 bytes).
+	Removing .data(fseek.o), (0 bytes).
+	Removing .bss(fseek.o), (0 bytes).
+	Removing .text.unlikely(fseek.o), (0 bytes).
+	Removing .comment(fseek.o), (67 bytes).
+	Removing .csky.attributes(fseek.o), (32 bytes).
+	Removing .text(do_semi.o), (10 bytes).
+	Removing .data(do_semi.o), (0 bytes).
+	Removing .bss(do_semi.o), (0 bytes).
+	Removing .csky.attributes(do_semi.o), (32 bytes).
+	Removing .text(drivers_bt.o), (0 bytes).
+	Removing .data(drivers_bt.o), (0 bytes).
+	Removing .bss(drivers_bt.o), (0 bytes).
+	Removing .text.unlikely.csi_bt_timer_init(drivers_bt.o), (0 bytes).
+	Removing .text.unlikely.csi_bt_count_mode(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_count_mode(drivers_bt.o), (12 bytes).
+	Removing .text.unlikely.csi_bt_start(drivers_bt.o), (0 bytes).
+	Removing .text.unlikely.csi_bt_stop(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_stop(drivers_bt.o), (8 bytes).
+	Removing .text.unlikely.csi_bt_int_enable(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_int_enable(drivers_bt.o), (34 bytes).
+	Removing .text.unlikely.csi_bt_get_remaining_value(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_get_remaining_value(drivers_bt.o), (12 bytes).
+	Removing .text.unlikely.csi_bt_get_load_value(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_get_load_value(drivers_bt.o), (6 bytes).
+	Removing .text.unlikely.csi_bt_is_running(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_is_running(drivers_bt.o), (8 bytes).
+	Removing .text.unlikely.csi_bt_pwm_init(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_pwm_init(drivers_bt.o), (232 bytes).
+	Removing .text.unlikely.csi_bt_prdr_cmp_updata(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_prdr_cmp_updata(drivers_bt.o), (6 bytes).
+	Removing .text.unlikely.csi_bt_pwm_duty_cycle_updata(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_pwm_duty_cycle_updata(drivers_bt.o), (156 bytes).
+	Removing .text.unlikely.csi_bt_pwm_updata(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_pwm_updata(drivers_bt.o), (252 bytes).
+	Removing .text.unlikely.csi_bt_set_sync(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_set_sync(drivers_bt.o), (80 bytes).
+	Removing .text.unlikely.csi_bt_rearm_sync(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_rearm_sync(drivers_bt.o), (16 bytes).
+	Removing .text.unlikely.csi_bt_set_evtrg(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_set_evtrg(drivers_bt.o), (28 bytes).
+	Removing .text.unlikely.csi_bt_soft_evtrg(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_soft_evtrg(drivers_bt.o), (20 bytes).
+	Removing .text.unlikely.csi_bt_start_sync(drivers_bt.o), (0 bytes).
+	Removing .text.csi_bt_start_sync(drivers_bt.o), (164 bytes).
+	Removing .bss.s_byBtCtrl(drivers_bt.o), (1 bytes).
+	Removing .bss.s_byIdleBk(drivers_bt.o), (1 bytes).
+	Removing .bss.s_byStaBk(drivers_bt.o), (1 bytes).
+	Removing .bss.s_hwPscrVal(drivers_bt.o), (2 bytes).
+	Removing .bss.s_wPrdrVal(drivers_bt.o), (4 bytes).
+	Removing .text(drivers_hwdiv.o), (0 bytes).
+	Removing .data(drivers_hwdiv.o), (0 bytes).
+	Removing .bss(drivers_hwdiv.o), (0 bytes).
+	Removing .text.unlikely.__divsi3(drivers_hwdiv.o), (0 bytes).
+	Removing .text.__divsi3(drivers_hwdiv.o), (30 bytes).
+	Removing .text.unlikely.__modsi3(drivers_hwdiv.o), (0 bytes).
+	Removing .text.__modsi3(drivers_hwdiv.o), (30 bytes).
+	Removing .text.unlikely.__udivsi3(drivers_hwdiv.o), (0 bytes).
+	Removing .text.__udivsi3(drivers_hwdiv.o), (30 bytes).
+	Removing .text.unlikely.__umodsi3(drivers_hwdiv.o), (0 bytes).
+	Removing .text.__umodsi3(drivers_hwdiv.o), (30 bytes).
+	Removing .debug_info(drivers_hwdiv.o), (977 bytes).
+	Removing .debug_abbrev(drivers_hwdiv.o), (364 bytes).
+	Removing .debug_loc(drivers_hwdiv.o), (76 bytes).
+	Removing .debug_aranges(drivers_hwdiv.o), (56 bytes).
+	Removing .debug_ranges(drivers_hwdiv.o), (40 bytes).
+	Removing .debug_macinfo(drivers_hwdiv.o), (34718 bytes).
+	Removing .debug_line(drivers_hwdiv.o), (1030 bytes).
+	Removing .debug_str(drivers_hwdiv.o), (556 bytes).
+	Removing .comment(drivers_hwdiv.o), (67 bytes).
+	Removing .debug_frame(drivers_hwdiv.o), (112 bytes).
+	Removing .csky.attributes(drivers_hwdiv.o), (32 bytes).
+	Removing .text(drivers_ifc.o), (0 bytes).
+	Removing .data(drivers_ifc.o), (0 bytes).
+	Removing .bss(drivers_ifc.o), (0 bytes).
+	Removing .text.unlikely.apt_ifc_wr_nword.isra.1(drivers_ifc.o), (0 bytes).
+	Removing .text.unlikely.csi_ifc_dflash_paramode_enable(drivers_ifc.o), (0 bytes).
+	Removing .text.csi_ifc_dflash_paramode_enable(drivers_ifc.o), (24 bytes).
+	Removing .text.unlikely.csi_ifc_read(drivers_ifc.o), (0 bytes).
+	Removing .text.csi_ifc_read(drivers_ifc.o), (40 bytes).
+	Removing .text.unlikely.csi_ifc_get_status(drivers_ifc.o), (0 bytes).
+	Removing .text.unlikely.csi_ifc_program(drivers_ifc.o), (0 bytes).
+	Removing .text.unlikely.apt_ifc_step_async(drivers_ifc.o), (0 bytes).
+	Removing .text.apt_ifc_step_async(drivers_ifc.o), (56 bytes).
+	Removing COMMON(drivers_ifc.o), (4 bytes).
+	Removing .text(drivers_iwdt.o), (0 bytes).
+	Removing .data(drivers_iwdt.o), (0 bytes).
+	Removing .bss(drivers_iwdt.o), (0 bytes).
+	Removing .text.unlikely.delay_ums(drivers_iwdt.o), (0 bytes).
+	Removing .text.unlikely.csi_iwdt_init(drivers_iwdt.o), (0 bytes).
+	Removing .text.csi_iwdt_init(drivers_iwdt.o), (192 bytes).
+	Removing .text.unlikely.csi_iwdt_open(drivers_iwdt.o), (0 bytes).
+	Removing .text.unlikely.csi_iwdt_close(drivers_iwdt.o), (0 bytes).
+	Removing .text.unlikely.csi_iwdt_feed(drivers_iwdt.o), (0 bytes).
+	Removing .text.unlikely.csi_iwdt_irq_enable(drivers_iwdt.o), (0 bytes).
+	Removing .text.csi_iwdt_irq_enable(drivers_iwdt.o), (76 bytes).
+	Removing .text.unlikely.csi_iwdt_is_running(drivers_iwdt.o), (0 bytes).
+	Removing .text.csi_iwdt_is_running(drivers_iwdt.o), (20 bytes).
+	Removing .text.unlikely.csi_iwdt_get_remaining_time(drivers_iwdt.o), (0 bytes).
+	Removing .text.csi_iwdt_get_remaining_time(drivers_iwdt.o), (68 bytes).
+	Removing .text.unlikely.csi_iwdt_debug_enable(drivers_iwdt.o), (0 bytes).
+	Removing .text.csi_iwdt_debug_enable(drivers_iwdt.o), (32 bytes).
+	Removing .data.s_wIwdtTimeout(drivers_iwdt.o), (4 bytes).
+	Removing .rodata.CSWTCH.37(drivers_iwdt.o), (14 bytes).
+	Removing .text(drivers_pinctrl.o), (0 bytes).
+	Removing .data(drivers_pinctrl.o), (0 bytes).
+	Removing .bss(drivers_pinctrl.o), (0 bytes).
+	Removing .text.unlikely.apt_iomap_handle(drivers_pinctrl.o), (0 bytes).
+	Removing .text.apt_iomap_handle(drivers_pinctrl.o), (252 bytes).
+	Removing .text.unlikely.apt_get_pin_name_addr(drivers_pinctrl.o), (0 bytes).
+	Removing .text.unlikely.gpio_intgroup_set(drivers_pinctrl.o), (0 bytes).
+	Removing .text.gpio_intgroup_set(drivers_pinctrl.o), (264 bytes).
+	Removing .text.unlikely.exi_trg_edge_set(drivers_pinctrl.o), (0 bytes).
+	Removing .text.exi_trg_edge_set(drivers_pinctrl.o), (112 bytes).
+	Removing .text.unlikely.csi_pin_set_mux(drivers_pinctrl.o), (0 bytes).
+	Removing .text.unlikely.csi_pin_set_iomap(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_pin_set_iomap(drivers_pinctrl.o), (388 bytes).
+	Removing .text.unlikely.csi_pin_get_mux(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_pin_get_mux(drivers_pinctrl.o), (40 bytes).
+	Removing .text.unlikely.csi_pin_pull_mode(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_pin_pull_mode(drivers_pinctrl.o), (98 bytes).
+	Removing .text.unlikely.csi_pin_speed(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_pin_speed(drivers_pinctrl.o), (40 bytes).
+	Removing .text.unlikely.csi_pin_drive(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_pin_drive(drivers_pinctrl.o), (46 bytes).
+	Removing .text.unlikely.csi_pin_input_mode(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_pin_input_mode(drivers_pinctrl.o), (6 bytes).
+	Removing .text.unlikely.csi_pin_output_mode(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_pin_output_mode(drivers_pinctrl.o), (96 bytes).
+	Removing .text.unlikely.csi_pin_input_filter(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_pin_input_filter(drivers_pinctrl.o), (38 bytes).
+	Removing .text.unlikely.csi_pin_get_num(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_pin_get_num(drivers_pinctrl.o), (10 bytes).
+	Removing .text.unlikely.csi_pin_read(drivers_pinctrl.o), (0 bytes).
+	Removing .text.unlikely.csi_pin_irq_mode(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_pin_irq_mode(drivers_pinctrl.o), (68 bytes).
+	Removing .text.unlikely.csi_pin_irq_enable(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_pin_irq_enable(drivers_pinctrl.o), (172 bytes).
+	Removing .text.unlikely.csi_pin_toggle(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_pin_toggle(drivers_pinctrl.o), (32 bytes).
+	Removing .text.unlikely.csi_pin_set_high(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_pin_set_high(drivers_pinctrl.o), (18 bytes).
+	Removing .text.unlikely.csi_pin_set_low(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_pin_set_low(drivers_pinctrl.o), (18 bytes).
+	Removing .text.unlikely.csi_exi_set_evtrg(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_exi_set_evtrg(drivers_pinctrl.o), (156 bytes).
+	Removing .text.unlikely.csi_exi_soft_evtrg(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_exi_soft_evtrg(drivers_pinctrl.o), (20 bytes).
+	Removing .text.unlikely.csi_exi_flt_enable(drivers_pinctrl.o), (0 bytes).
+	Removing .text.csi_exi_flt_enable(drivers_pinctrl.o), (36 bytes).
+	Removing .text(drivers_sys_clk.o), (0 bytes).
+	Removing .data(drivers_sys_clk.o), (0 bytes).
+	Removing .bss(drivers_sys_clk.o), (0 bytes).
+	Removing .text.unlikely.csi_clk_enable(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_clk_enable(drivers_sys_clk.o), (60 bytes).
+	Removing .text.unlikely.csi_clk_disable(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_clk_disable(drivers_sys_clk.o), (60 bytes).
+	Removing .text.unlikely.csi_emosc_enable(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_emosc_enable(drivers_sys_clk.o), (116 bytes).
+	Removing .text.unlikely.csi_emosc_disable(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_emosc_disable(drivers_sys_clk.o), (32 bytes).
+	Removing .text.unlikely.csi_esosc_enable(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_esosc_enable(drivers_sys_clk.o), (68 bytes).
+	Removing .text.unlikely.csi_esosc_disable(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_esosc_disable(drivers_sys_clk.o), (32 bytes).
+	Removing .text.unlikely.csi_imosc_enable(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_imosc_enable(drivers_sys_clk.o), (36 bytes).
+	Removing .text.unlikely.csi_imosc_disable(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_imosc_disable(drivers_sys_clk.o), (32 bytes).
+	Removing .text.unlikely.csi_hfosc_enable(drivers_sys_clk.o), (0 bytes).
+	Removing .text.unlikely.csi_hfosc_disable(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_hfosc_disable(drivers_sys_clk.o), (32 bytes).
+	Removing .text.unlikely.csi_isosc_enable(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_isosc_enable(drivers_sys_clk.o), (28 bytes).
+	Removing .text.unlikely.csi_isosc_disable(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_isosc_disable(drivers_sys_clk.o), (48 bytes).
+	Removing .text.unlikely.csi_emosc_filter_enable(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_emosc_filter_enable(drivers_sys_clk.o), (36 bytes).
+	Removing .text.unlikely.csi_esosc_filter_enable(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_esosc_filter_enable(drivers_sys_clk.o), (24 bytes).
+	Removing .text.unlikely.csi_emosc_set_gain(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_emosc_set_gain(drivers_sys_clk.o), (28 bytes).
+	Removing .text.unlikely.csi_esosc_set_gain(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_esosc_set_gain(drivers_sys_clk.o), (24 bytes).
+	Removing .text.unlikely.csi_clk_calib(drivers_sys_clk.o), (0 bytes).
+	Removing .text.csi_clk_calib(drivers_sys_clk.o), (724 bytes).
+	Removing .text(drivers_sys_devices.o), (0 bytes).
+	Removing .data(drivers_sys_devices.o), (0 bytes).
+	Removing .bss(drivers_sys_devices.o), (0 bytes).
+	Removing .data.ADC0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.BT1(drivers_sys_devices.o), (4 bytes).
+	Removing .data.CMP0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.CMP1(drivers_sys_devices.o), (4 bytes).
+	Removing .data.CNTA(drivers_sys_devices.o), (4 bytes).
+	Removing .data.CORET0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.CRC(drivers_sys_devices.o), (4 bytes).
+	Removing .data.DMA(drivers_sys_devices.o), (4 bytes).
+	Removing .data.EPT0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.ETCB(drivers_sys_devices.o), (4 bytes).
+	Removing .data.GPIOA0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.GPIOA1(drivers_sys_devices.o), (4 bytes).
+	Removing .data.GPIOB0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.GPIOC0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.GPIOGRP(drivers_sys_devices.o), (4 bytes).
+	Removing .data.GPTA0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.GPTA1(drivers_sys_devices.o), (4 bytes).
+	Removing .data.GPTB0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.GPTB1(drivers_sys_devices.o), (4 bytes).
+	Removing .data.I2C0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.LCD(drivers_sys_devices.o), (4 bytes).
+	Removing .data.LED(drivers_sys_devices.o), (4 bytes).
+	Removing .data.LIN0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.LPT(drivers_sys_devices.o), (4 bytes).
+	Removing .data.RTC(drivers_sys_devices.o), (4 bytes).
+	Removing .data.SIO0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.SPI0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.TKEY(drivers_sys_devices.o), (4 bytes).
+	Removing .data.UART0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.USART0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.VIC0(drivers_sys_devices.o), (4 bytes).
+	Removing .data.WWDT(drivers_sys_devices.o), (4 bytes).
+	Removing .rodata.clk_map(drivers_sys_devices.o), (224 bytes).
+	Removing .rodata.irq_map(drivers_sys_devices.o), (232 bytes).
+	Removing .text(drivers_sys_irq.o), (0 bytes).
+	Removing .data(drivers_sys_irq.o), (0 bytes).
+	Removing .bss(drivers_sys_irq.o), (0 bytes).
+	Removing .text.unlikely.csi_irq_enable(drivers_sys_irq.o), (0 bytes).
+	Removing .text.csi_irq_enable(drivers_sys_irq.o), (52 bytes).
+	Removing .text.unlikely.csi_irq_disable(drivers_sys_irq.o), (0 bytes).
+	Removing .text.csi_irq_disable(drivers_sys_irq.o), (52 bytes).
+	Removing .debug_info(drivers_sys_irq.o), (967 bytes).
+	Removing .debug_abbrev(drivers_sys_irq.o), (366 bytes).
+	Removing .debug_loc(drivers_sys_irq.o), (98 bytes).
+	Removing .debug_aranges(drivers_sys_irq.o), (40 bytes).
+	Removing .debug_ranges(drivers_sys_irq.o), (24 bytes).
+	Removing .debug_macinfo(drivers_sys_irq.o), (34930 bytes).
+	Removing .debug_line(drivers_sys_irq.o), (899 bytes).
+	Removing .debug_str(drivers_sys_irq.o), (705 bytes).
+	Removing .comment(drivers_sys_irq.o), (67 bytes).
+	Removing .debug_frame(drivers_sys_irq.o), (48 bytes).
+	Removing .csky.attributes(drivers_sys_irq.o), (32 bytes).
+	Removing .data(drivers_sys_startup.o), (4 bytes).
+	Removing .bss(drivers_sys_startup.o), (0 bytes).
+	Removing .text(drivers_sys_sys_clk.o), (0 bytes).
+	Removing .data(drivers_sys_sys_clk.o), (0 bytes).
+	Removing .bss(drivers_sys_sys_clk.o), (0 bytes).
+	Removing .text.unlikely.csp_set_clksrc(drivers_sys_sys_clk.o), (0 bytes).
+	Removing .text.unlikely.csi_sysclk_config(drivers_sys_sys_clk.o), (0 bytes).
+	Removing .text.csi_sysclk_config(drivers_sys_sys_clk.o), (432 bytes).
+	Removing .text.unlikely.csi_bootloader_sysclk_config(drivers_sys_sys_clk.o), (0 bytes).
+	Removing .text.unlikely.csi_clo_config(drivers_sys_sys_clk.o), (0 bytes).
+	Removing .text.csi_clo_config(drivers_sys_sys_clk.o), (48 bytes).
+	Removing .text.unlikely.soc_clk_enable(drivers_sys_sys_clk.o), (0 bytes).
+	Removing .text.unlikely.soc_clk_disable(drivers_sys_sys_clk.o), (0 bytes).
+	Removing .text.soc_clk_disable(drivers_sys_sys_clk.o), (36 bytes).
+	Removing .text.unlikely.csi_get_sclk_freq(drivers_sys_sys_clk.o), (0 bytes).
+	Removing .text.csi_get_sclk_freq(drivers_sys_sys_clk.o), (200 bytes).
+	Removing .text.unlikely.csi_get_pclk_freq(drivers_sys_sys_clk.o), (0 bytes).
+	Removing .text.csi_get_pclk_freq(drivers_sys_sys_clk.o), (48 bytes).
+	Removing .text.unlikely.soc_get_coret_freq(drivers_sys_sys_clk.o), (0 bytes).
+	Removing .text.soc_get_coret_freq(drivers_sys_sys_clk.o), (32 bytes).
+	Removing .text.unlikely.soc_get_bt_freq(drivers_sys_sys_clk.o), (0 bytes).
+	Removing .text.soc_get_bt_freq(drivers_sys_sys_clk.o), (44 bytes).
+	Removing .text.unlikely.soc_get_rtc_freq(drivers_sys_sys_clk.o), (0 bytes).
+	Removing .text.soc_get_rtc_freq(drivers_sys_sys_clk.o), (76 bytes).
+	Removing .rodata.CSWTCH.42(drivers_sys_sys_clk.o), (16 bytes).
+	Removing .rodata.g_wHclkDiv(drivers_sys_sys_clk.o), (64 bytes).
+	Removing .text(drivers_uart.o), (0 bytes).
+	Removing .data(drivers_uart.o), (0 bytes).
+	Removing .bss(drivers_uart.o), (0 bytes).
+	Removing .text.unlikely.apt_get_uart_idx(drivers_uart.o), (0 bytes).
+	Removing .text.apt_get_uart_idx(drivers_uart.o), (44 bytes).
+	Removing .text.unlikely.csi_uart_recv_dynamic_scan(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_recv_dynamic_scan(drivers_uart.o), (40 bytes).
+	Removing .text.unlikely.uart_irqhandler(drivers_uart.o), (0 bytes).
+	Removing .text.uart_irqhandler(drivers_uart.o), (260 bytes).
+	Removing .text.unlikely.csi_uart_init(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_init(drivers_uart.o), (180 bytes).
+	Removing .text.unlikely.csi_uart_recv_timeout(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_recv_timeout(drivers_uart.o), (18 bytes).
+	Removing .text.unlikely.csi_uart_int_enable(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_int_enable(drivers_uart.o), (30 bytes).
+	Removing .text.unlikely.csi_uart_start(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_start(drivers_uart.o), (46 bytes).
+	Removing .text.unlikely.csi_uart_stop(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_stop(drivers_uart.o), (42 bytes).
+	Removing .text.unlikely.csi_uart_set_buffer(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_set_buffer(drivers_uart.o), (36 bytes).
+	Removing .text.unlikely.csi_uart_putc(drivers_uart.o), (0 bytes).
+	Removing .text.unlikely.csi_uart_getc(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_getc(drivers_uart.o), (16 bytes).
+	Removing .text.unlikely.csi_uart_send(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_send(drivers_uart.o), (104 bytes).
+	Removing .text.unlikely.csi_uart_dma_rx_init(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_dma_rx_init(drivers_uart.o), (152 bytes).
+	Removing .text.unlikely.csi_uart_dma_tx_init(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_dma_tx_init(drivers_uart.o), (156 bytes).
+	Removing .text.unlikely.csi_uart_send_dma(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_send_dma(drivers_uart.o), (40 bytes).
+	Removing .text.unlikely.csi_uart_recv_dma(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_recv_dma(drivers_uart.o), (48 bytes).
+	Removing .text.unlikely.csi_uart_receive(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_receive(drivers_uart.o), (240 bytes).
+	Removing .text.unlikely.csi_uart_get_msg(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_get_msg(drivers_uart.o), (76 bytes).
+	Removing .text.unlikely.csi_uart_clr_msg(drivers_uart.o), (0 bytes).
+	Removing .text.csi_uart_clr_msg(drivers_uart.o), (32 bytes).
+	Removing COMMON(drivers_uart.o), (48 bytes).
+	Removing .text(drivers_dma.o), (0 bytes).
+	Removing .data(drivers_dma.o), (0 bytes).
+	Removing .bss(drivers_dma.o), (0 bytes).
+	Removing .text.unlikely.dma_irqhandler(drivers_dma.o), (0 bytes).
+	Removing .text.dma_irqhandler(drivers_dma.o), (136 bytes).
+	Removing .text.unlikely.csi_dma_ch_init(drivers_dma.o), (0 bytes).
+	Removing .text.csi_dma_ch_init(drivers_dma.o), (114 bytes).
+	Removing .text.unlikely.csi_dma_ch_start(drivers_dma.o), (0 bytes).
+	Removing .text.csi_dma_ch_start(drivers_dma.o), (172 bytes).
+	Removing .text.unlikely.csi_dma_int_enable(drivers_dma.o), (0 bytes).
+	Removing .text.csi_dma_int_enable(drivers_dma.o), (34 bytes).
+	Removing .text.unlikely.csi_dma_ch_stop(drivers_dma.o), (0 bytes).
+	Removing .text.csi_dma_ch_stop(drivers_dma.o), (14 bytes).
+	Removing .text.unlikely.csi_dma_soft_rst(drivers_dma.o), (0 bytes).
+	Removing .text.csi_dma_soft_rst(drivers_dma.o), (8 bytes).
+	Removing .text.unlikely.csi_dma_get_msg(drivers_dma.o), (0 bytes).
+	Removing .text.csi_dma_get_msg(drivers_dma.o), (84 bytes).
+	Removing .bss.s_hwDmaMsg(drivers_dma.o), (2 bytes).
+	Removing .debug_info(drivers_dma.o), (11996 bytes).
+	Removing .debug_abbrev(drivers_dma.o), (675 bytes).
+	Removing .debug_loc(drivers_dma.o), (1538 bytes).
+	Removing .debug_aranges(drivers_dma.o), (80 bytes).
+	Removing .debug_ranges(drivers_dma.o), (296 bytes).
+	Removing .debug_macinfo(drivers_dma.o), (111264 bytes).
+	Removing .debug_line(drivers_dma.o), (1736 bytes).
+	Removing .debug_str(drivers_dma.o), (4837 bytes).
+	Removing .comment(drivers_dma.o), (67 bytes).
+	Removing .debug_frame(drivers_dma.o), (200 bytes).
+	Removing .csky.attributes(drivers_dma.o), (32 bytes).
+	Removing .text(drivers_etb.o), (0 bytes).
+	Removing .data(drivers_etb.o), (0 bytes).
+	Removing .bss(drivers_etb.o), (0 bytes).
+	Removing .text.unlikely.check_is_alloced(drivers_etb.o), (0 bytes).
+	Removing .text.check_is_alloced(drivers_etb.o), (52 bytes).
+	Removing .text.unlikely.etb_channel_enable(drivers_etb.o), (0 bytes).
+	Removing .text.etb_channel_enable(drivers_etb.o), (60 bytes).
+	Removing .text.unlikely.csi_etb_init(drivers_etb.o), (0 bytes).
+	Removing .text.csi_etb_init(drivers_etb.o), (24 bytes).
+	Removing .text.unlikely.csi_etb_ch_alloc(drivers_etb.o), (0 bytes).
+	Removing .text.csi_etb_ch_alloc(drivers_etb.o), (156 bytes).
+	Removing .text.unlikely.csi_etb_ch_free(drivers_etb.o), (0 bytes).
+	Removing .text.csi_etb_ch_free(drivers_etb.o), (56 bytes).
+	Removing .text.unlikely.csi_etb_ch_config(drivers_etb.o), (0 bytes).
+	Removing .text.csi_etb_ch_config(drivers_etb.o), (384 bytes).
+	Removing .text.unlikely.csi_etb_ch_swtrg(drivers_etb.o), (0 bytes).
+	Removing .text.csi_etb_ch_swtrg(drivers_etb.o), (24 bytes).
+	Removing .text.unlikely.csi_etb_ch_start(drivers_etb.o), (0 bytes).
+	Removing .text.csi_etb_ch_start(drivers_etb.o), (20 bytes).
+	Removing .text.unlikely.csi_etb_ch_stop(drivers_etb.o), (0 bytes).
+	Removing .text.csi_etb_ch_stop(drivers_etb.o), (20 bytes).
+	Removing .bss.s_wEtbAllocStatus(drivers_etb.o), (4 bytes).
+	Removing .debug_info(drivers_etb.o), (12430 bytes).
+	Removing .debug_abbrev(drivers_etb.o), (848 bytes).
+	Removing .debug_loc(drivers_etb.o), (1288 bytes).
+	Removing .debug_aranges(drivers_etb.o), (96 bytes).
+	Removing .debug_ranges(drivers_etb.o), (200 bytes).
+	Removing .debug_macinfo(drivers_etb.o), (111241 bytes).
+	Removing .debug_line(drivers_etb.o), (1650 bytes).
+	Removing .debug_str(drivers_etb.o), (6299 bytes).
+	Removing .comment(drivers_etb.o), (67 bytes).
+	Removing .debug_frame(drivers_etb.o), (244 bytes).
+	Removing .csky.attributes(drivers_etb.o), (32 bytes).
+	Removing .text(drivers_lpt.o), (0 bytes).
+	Removing .data(drivers_lpt.o), (0 bytes).
+	Removing .bss(drivers_lpt.o), (0 bytes).
+	Removing .text.unlikely.csp_lpt_set_pol(drivers_lpt.o), (0 bytes).
+	Removing .text.csp_lpt_set_pol(drivers_lpt.o), (22 bytes).
+	Removing .text.unlikely.apt_set_lpt_clk(drivers_lpt.o), (0 bytes).
+	Removing .text.apt_set_lpt_clk(drivers_lpt.o), (210 bytes).
+	Removing .text.unlikely.apt_get_lpt_clk(drivers_lpt.o), (0 bytes).
+	Removing .text.apt_get_lpt_clk(drivers_lpt.o), (116 bytes).
+	Removing .text.unlikely.csp_lpt_stopshadow_enable.constprop.4(drivers_lpt.o), (0 bytes).
+	Removing .text.csp_lpt_stopshadow_enable.constprop.4(drivers_lpt.o), (20 bytes).
+	Removing .text.unlikely.csp_lpt_clk_enable.constprop.5(drivers_lpt.o), (0 bytes).
+	Removing .text.csp_lpt_clk_enable.constprop.5(drivers_lpt.o), (20 bytes).
+	Removing .text.unlikely.lpt_irqhandler(drivers_lpt.o), (0 bytes).
+	Removing .text.lpt_irqhandler(drivers_lpt.o), (56 bytes).
+	Removing .text.unlikely.csi_lpt_int_enable(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_int_enable(drivers_lpt.o), (34 bytes).
+	Removing .text.unlikely.csi_lpt_timer_init(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_timer_init(drivers_lpt.o), (116 bytes).
+	Removing .text.unlikely.csi_lpt_uninit(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_uninit(drivers_lpt.o), (20 bytes).
+	Removing .text.unlikely.csi_lpt_stop(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_stop(drivers_lpt.o), (8 bytes).
+	Removing .text.unlikely.csi_lpt_count_mode(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_count_mode(drivers_lpt.o), (22 bytes).
+	Removing .text.unlikely.csi_lpt_get_remaining_value(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_get_remaining_value(drivers_lpt.o), (12 bytes).
+	Removing .text.unlikely.csi_lpt_get_load_value(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_get_load_value(drivers_lpt.o), (6 bytes).
+	Removing .text.unlikely.csi_lpt_is_running(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_is_running(drivers_lpt.o), (8 bytes).
+	Removing .text.unlikely.csi_lpt_pwm_para_updata(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_pwm_para_updata(drivers_lpt.o), (56 bytes).
+	Removing .text.unlikely.csi_lpt_rearm_sync(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_rearm_sync(drivers_lpt.o), (20 bytes).
+	Removing .text.unlikely.csi_lpt_set_evtrg(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_set_evtrg(drivers_lpt.o), (48 bytes).
+	Removing .text.unlikely.csi_lpt_set_fre(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_set_fre(drivers_lpt.o), (72 bytes).
+	Removing .text.unlikely.csi_lpt_pwm_init(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_pwm_init(drivers_lpt.o), (252 bytes).
+	Removing .text.unlikely.csi_lpt_pwm_start_sync(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_pwm_start_sync(drivers_lpt.o), (232 bytes).
+	Removing .text.unlikely.csi_lpt_change_duty(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_change_duty(drivers_lpt.o), (84 bytes).
+	Removing .text.unlikely.csi_lpt_start(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_start(drivers_lpt.o), (38 bytes).
+	Removing .text.unlikely.csi_lpt_start_sync(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_start_sync(drivers_lpt.o), (136 bytes).
+	Removing .text.unlikely.csi_lpt_set_sync(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_set_sync(drivers_lpt.o), (42 bytes).
+	Removing .text.unlikely.csi_lpt_swsync_enable(drivers_lpt.o), (0 bytes).
+	Removing .text.csi_lpt_swsync_enable(drivers_lpt.o), (22 bytes).
+	Removing .bss.wLptPrd(drivers_lpt.o), (4 bytes).
+	Removing .debug_info(drivers_lpt.o), (15127 bytes).
+	Removing .debug_abbrev(drivers_lpt.o), (992 bytes).
+	Removing .debug_loc(drivers_lpt.o), (2964 bytes).
+	Removing .debug_aranges(drivers_lpt.o), (224 bytes).
+	Removing .debug_ranges(drivers_lpt.o), (336 bytes).
+	Removing .debug_macinfo(drivers_lpt.o), (112621 bytes).
+	Removing .debug_line(drivers_lpt.o), (2504 bytes).
+	Removing .debug_str(drivers_lpt.o), (6020 bytes).
+	Removing .comment(drivers_lpt.o), (67 bytes).
+	Removing .debug_frame(drivers_lpt.o), (552 bytes).
+	Removing .csky.attributes(drivers_lpt.o), (32 bytes).
+	Removing COMMON(drivers_lpt.o), (1 bytes).
+	Removing .text(drivers_ringbuf.o), (0 bytes).
+	Removing .data(drivers_ringbuf.o), (0 bytes).
+	Removing .bss(drivers_ringbuf.o), (0 bytes).
+	Removing .text.unlikely.ringbuffer_reset(drivers_ringbuf.o), (0 bytes).
+	Removing .text.ringbuffer_reset(drivers_ringbuf.o), (10 bytes).
+	Removing .text.unlikely.ringbuffer_in(drivers_ringbuf.o), (0 bytes).
+	Removing .text.ringbuffer_in(drivers_ringbuf.o), (90 bytes).
+	Removing .text.unlikely.ringbuffer_out(drivers_ringbuf.o), (0 bytes).
+	Removing .text.ringbuffer_out(drivers_ringbuf.o), (88 bytes).
+	Removing .text.unlikely.ringbuffer_byte_in(drivers_ringbuf.o), (0 bytes).
+	Removing .text.ringbuffer_byte_in(drivers_ringbuf.o), (40 bytes).
+	Removing .text.unlikely.ringbuffer_byte_out(drivers_ringbuf.o), (0 bytes).
+	Removing .text.ringbuffer_byte_out(drivers_ringbuf.o), (46 bytes).
+	Removing .debug_info(drivers_ringbuf.o), (737 bytes).
+	Removing .debug_abbrev(drivers_ringbuf.o), (267 bytes).
+	Removing .debug_loc(drivers_ringbuf.o), (531 bytes).
+	Removing .debug_aranges(drivers_ringbuf.o), (64 bytes).
+	Removing .debug_ranges(drivers_ringbuf.o), (48 bytes).
+	Removing .debug_macinfo(drivers_ringbuf.o), (15900 bytes).
+	Removing .debug_line(drivers_ringbuf.o), (755 bytes).
+	Removing .debug_str(drivers_ringbuf.o), (650 bytes).
+	Removing .comment(drivers_ringbuf.o), (67 bytes).
+	Removing .debug_frame(drivers_ringbuf.o), (140 bytes).
+	Removing .csky.attributes(drivers_ringbuf.o), (32 bytes).
+	Removing .text(drivers_sys_mem_init.o), (0 bytes).
+	Removing .data(drivers_sys_mem_init.o), (0 bytes).
+	Removing .bss(drivers_sys_mem_init.o), (0 bytes).
+	Removing .text.unlikely.__main(drivers_sys_mem_init.o), (0 bytes).
+	Removing .text(drivers_sys_tick.o), (0 bytes).
+	Removing .data(drivers_sys_tick.o), (0 bytes).
+	Removing .bss(drivers_sys_tick.o), (0 bytes).
+	Removing .text.unlikely._500usdelay(drivers_sys_tick.o), (0 bytes).
+	Removing .text._500usdelay(drivers_sys_tick.o), (52 bytes).
+	Removing .text.unlikely.csi_tick_increase(drivers_sys_tick.o), (0 bytes).
+	Removing .text.csi_tick_increase(drivers_sys_tick.o), (16 bytes).
+	Removing .text.unlikely.tick_irqhandler(drivers_sys_tick.o), (0 bytes).
+	Removing .text.tick_irqhandler(drivers_sys_tick.o), (40 bytes).
+	Removing .text.unlikely.csi_tick_init(drivers_sys_tick.o), (0 bytes).
+	Removing .text.csi_tick_init(drivers_sys_tick.o), (88 bytes).
+	Removing .text.unlikely.csi_tick_uninit(drivers_sys_tick.o), (0 bytes).
+	Removing .text.csi_tick_uninit(drivers_sys_tick.o), (16 bytes).
+	Removing .text.unlikely.csi_tick_attach_callback(drivers_sys_tick.o), (0 bytes).
+	Removing .text.csi_tick_attach_callback(drivers_sys_tick.o), (12 bytes).
+	Removing .text.unlikely.csi_tick_get(drivers_sys_tick.o), (0 bytes).
+	Removing .text.csi_tick_get(drivers_sys_tick.o), (12 bytes).
+	Removing .text.unlikely.csi_tick_get_ms(drivers_sys_tick.o), (0 bytes).
+	Removing .text.csi_tick_get_ms(drivers_sys_tick.o), (64 bytes).
+	Removing .text.unlikely.csi_tick_get_us(drivers_sys_tick.o), (0 bytes).
+	Removing .text.csi_tick_get_us(drivers_sys_tick.o), (124 bytes).
+	Removing .text.unlikely.mdelay(drivers_sys_tick.o), (0 bytes).
+	Removing .text.mdelay(drivers_sys_tick.o), (22 bytes).
+	Removing .text.unlikely._10udelay(drivers_sys_tick.o), (0 bytes).
+	Removing .text._10udelay(drivers_sys_tick.o), (52 bytes).
+	Removing .text.unlikely.udelay(drivers_sys_tick.o), (0 bytes).
+	Removing .text.udelay(drivers_sys_tick.o), (24 bytes).
+	Removing .bss.csi_tick(drivers_sys_tick.o), (4 bytes).
+	Removing .bss.last_time_ms(drivers_sys_tick.o), (4 bytes).
+	Removing .bss.last_time_us(drivers_sys_tick.o), (8 bytes).
+	Removing .debug_info(drivers_sys_tick.o), (10767 bytes).
+	Removing .debug_abbrev(drivers_sys_tick.o), (837 bytes).
+	Removing .debug_loc(drivers_sys_tick.o), (135 bytes).
+	Removing .debug_aranges(drivers_sys_tick.o), (120 bytes).
+	Removing .debug_ranges(drivers_sys_tick.o), (208 bytes).
+	Removing .debug_macinfo(drivers_sys_tick.o), (111418 bytes).
+	Removing .debug_line(drivers_sys_tick.o), (1669 bytes).
+	Removing .debug_str(drivers_sys_tick.o), (4293 bytes).
+	Removing .comment(drivers_sys_tick.o), (67 bytes).
+	Removing .debug_frame(drivers_sys_tick.o), (300 bytes).
+	Removing .csky.attributes(drivers_sys_tick.o), (32 bytes).
+	Removing COMMON(drivers_sys_tick.o), (4 bytes).
+	Removing .text(src_board_config.o), (0 bytes).
+	Removing .data(src_board_config.o), (0 bytes).
+	Removing .bss(src_board_config.o), (0 bytes).
+	Removing .text.unlikely.board_init(src_board_config.o), (0 bytes).
+	Removing .text.board_init(src_board_config.o), (48 bytes).
+	Removing .data.tClkConfig(src_board_config.o), (24 bytes).
+	Removing .debug_info(src_board_config.o), (12676 bytes).
+	Removing .debug_abbrev(src_board_config.o), (380 bytes).
+	Removing .debug_aranges(src_board_config.o), (32 bytes).
+	Removing .debug_ranges(src_board_config.o), (16 bytes).
+	Removing .debug_macinfo(src_board_config.o), (112672 bytes).
+	Removing .debug_line(src_board_config.o), (1393 bytes).
+	Removing .debug_str(src_board_config.o), (9994 bytes).
+	Removing .comment(src_board_config.o), (67 bytes).
+	Removing .debug_frame(src_board_config.o), (40 bytes).
+	Removing .csky.attributes(src_board_config.o), (32 bytes).
+	Removing COMMON(src_board_config.o), (28 bytes).
+	Removing .text(src_interrupt.o), (0 bytes).
+	Removing .data(src_interrupt.o), (0 bytes).
+	Removing .bss(src_interrupt.o), (0 bytes).
+	Removing .text.unlikely.coret_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.coret_int_handler(src_interrupt.o), (20 bytes).
+	Removing .text.unlikely.uart1_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.unlikely.bt0_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.unlikely.lcd_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.lcd_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.bt1_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.bt1_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.cmp_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.cmp_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.led_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.led_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.lpt_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.lpt_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.tkey_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.tkey_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.cnta_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.cnta_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.exi10_15_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.exi10_15_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.exi4_9_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.exi4_9_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.exi2_3_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.exi2_3_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.exi1_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.exi1_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.exi0_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.exi0_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.spi0_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.spi0_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.i2c_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.i2c_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.sio_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.sio_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.usart0_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.usart0_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.uart2_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.uart2_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.uart0_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.uart0_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.rtc_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.rtc_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.gptb1_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.gptb1_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.gptb0_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.gptb0_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.gpta1_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.gpta1_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.gpta0_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.gpta0_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.wwdt_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.wwdt_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.dma_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.dma_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.ept0_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.ept0_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.adc_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.adc_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.ifc_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.ifc_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.syscon_int_handler(src_interrupt.o), (0 bytes).
+	Removing .text.syscon_int_handler(src_interrupt.o), (8 bytes).
+	Removing .text.unlikely.PriviledgeVioHandler(src_interrupt.o), (0 bytes).
+	Removing .text.PriviledgeVioHandler(src_interrupt.o), (6 bytes).
+	Removing .text.unlikely.SystemDesPtr(src_interrupt.o), (0 bytes).
+	Removing .text.SystemDesPtr(src_interrupt.o), (2 bytes).
+	Removing .text.unlikely.MisalignedHandler(src_interrupt.o), (0 bytes).
+	Removing .text.unlikely.IllegalInstrHandler(src_interrupt.o), (0 bytes).
+	Removing .text.IllegalInstrHandler(src_interrupt.o), (6 bytes).
+	Removing .text.unlikely.AccessErrHandler(src_interrupt.o), (0 bytes).
+	Removing .text.unlikely.BreakPointHandler(src_interrupt.o), (0 bytes).
+	Removing .text.unlikely.UnrecExecpHandler(src_interrupt.o), (0 bytes).
+	Removing .text.UnrecExecpHandler(src_interrupt.o), (6 bytes).
+	Removing .text.unlikely.Trap0Handler(src_interrupt.o), (0 bytes).
+	Removing .text.Trap0Handler(src_interrupt.o), (6 bytes).
+	Removing .text.unlikely.Trap1Handler(src_interrupt.o), (0 bytes).
+	Removing .text.Trap1Handler(src_interrupt.o), (6 bytes).
+	Removing .text.unlikely.Trap2Handler(src_interrupt.o), (0 bytes).
+	Removing .text.Trap2Handler(src_interrupt.o), (6 bytes).
+	Removing .text.unlikely.Trap3Handler(src_interrupt.o), (0 bytes).
+	Removing .text.Trap3Handler(src_interrupt.o), (6 bytes).
+	Removing .text.unlikely.PendTrapHandler(src_interrupt.o), (0 bytes).
+	Removing .text(src_sys_console.o), (0 bytes).
+	Removing .data(src_sys_console.o), (0 bytes).
+	Removing .bss(src_sys_console.o), (0 bytes).
+	Removing .text.unlikely.console_init(src_sys_console.o), (0 bytes).
+	Removing .text.console_init(src_sys_console.o), (86 bytes).
+	Removing .text.unlikely.fputc(src_sys_console.o), (0 bytes).
+	Removing .text.fputc(src_sys_console.o), (36 bytes).
+	Removing .text.unlikely.fgetc(src_sys_console.o), (0 bytes).
+	Removing .text.fgetc(src_sys_console.o), (16 bytes).
+	Removing .debug_info(src_sys_console.o), (13147 bytes).
+	Removing .debug_abbrev(src_sys_console.o), (464 bytes).
+	Removing .debug_loc(src_sys_console.o), (139 bytes).
+	Removing .debug_aranges(src_sys_console.o), (48 bytes).
+	Removing .debug_ranges(src_sys_console.o), (32 bytes).
+	Removing .debug_macinfo(src_sys_console.o), (111607 bytes).
+	Removing .debug_line(src_sys_console.o), (1391 bytes).
+	Removing .debug_str(src_sys_console.o), (10562 bytes).
+	Removing .comment(src_sys_console.o), (67 bytes).
+	Removing .debug_frame(src_sys_console.o), (104 bytes).
+	Removing .csky.attributes(src_sys_console.o), (32 bytes).
+	Removing .text(_csky_case_uqi.o), (20 bytes).
+	Removing .data(_csky_case_uqi.o), (0 bytes).
+	Removing .bss(_csky_case_uqi.o), (0 bytes).
+	Removing .csky.attributes(_csky_case_uqi.o), (32 bytes).
+	Removing .text(_muldi3.o), (68 bytes).
+	Removing .data(_muldi3.o), (0 bytes).
+	Removing .bss(_muldi3.o), (0 bytes).
+	Removing .comment(_muldi3.o), (67 bytes).
+	Removing .csky.attributes(_muldi3.o), (32 bytes).
+	Removing .text(_lshrdi3.o), (38 bytes).
+	Removing .data(_lshrdi3.o), (0 bytes).
+	Removing .bss(_lshrdi3.o), (0 bytes).
+	Removing .comment(_lshrdi3.o), (67 bytes).
+	Removing .csky.attributes(_lshrdi3.o), (32 bytes).
+	Removing .text(_divdi3.o), (1000 bytes).
+	Removing .data(_divdi3.o), (0 bytes).
+	Removing .bss(_divdi3.o), (0 bytes).
+	Removing .comment(_divdi3.o), (67 bytes).
+	Removing .csky.attributes(_divdi3.o), (32 bytes).
+	Removing .text(_udivdi3.o), (952 bytes).
+	Removing .data(_udivdi3.o), (0 bytes).
+	Removing .bss(_udivdi3.o), (0 bytes).
+	Removing .comment(_udivdi3.o), (67 bytes).
+	Removing .csky.attributes(_udivdi3.o), (32 bytes).
+	Removing .text(_clz.o), (0 bytes).
+	Removing .data(_clz.o), (0 bytes).
+	Removing .bss(_clz.o), (0 bytes).
+	Removing .rodata(_clz.o), (256 bytes).
+	Removing .comment(_clz.o), (67 bytes).
+	Removing .csky.attributes(_clz.o), (32 bytes).
+	Removing .text(minilibc_init.o), (60 bytes).
+	Removing .data(minilibc_init.o), (0 bytes).
+	Removing .bss(minilibc_init.o), (0 bytes).
+	Removing .text.unlikely(minilibc_init.o), (0 bytes).
+	Removing .comment(minilibc_init.o), (67 bytes).
+	Removing .csky.attributes(minilibc_init.o), (32 bytes).
+	Removing COMMON(minilibc_init.o), (8 bytes).
+	Removing .text(critical.o), (16 bytes).
+	Removing .data(critical.o), (0 bytes).
+	Removing .bss(critical.o), (0 bytes).
+	Removing .text.unlikely(critical.o), (0 bytes).
+	Removing .comment(critical.o), (67 bytes).
+	Removing .csky.attributes(critical.o), (32 bytes).
+	Removing .text(stdinit.o), (0 bytes).
+	Removing .data(stdinit.o), (96 bytes).
+	Removing .bss(stdinit.o), (0 bytes).
+	Removing .comment(stdinit.o), (67 bytes).
+	Removing .csky.attributes(stdinit.o), (32 bytes).
+	Removing .text(malloc.o), (276 bytes).
+	Removing .data(malloc.o), (8 bytes).
+	Removing .bss(malloc.o), (0 bytes).
+	Removing .csky.attributes(malloc.o), (32 bytes).
+	Removing .data(memset_fast.o), (0 bytes).
+	Removing .bss(memset_fast.o), (0 bytes).
+	Removing .text(strlen_fast.o), (62 bytes).
+	Removing .data(strlen_fast.o), (0 bytes).
+	Removing .bss(strlen_fast.o), (0 bytes).
+	Removing .csky.attributes(strlen_fast.o), (32 bytes).
+	Removing .data(memcpy_fast.o), (0 bytes).
+	Removing .bss(memcpy_fast.o), (0 bytes).
+
+786 unused seciton(s) (total 927613 bytes) removed from the image.
+
+======================================================================
+
+Image Symbol Table 
+
+	Local Symbols
+
+	Symbol Name                        Value        Type   Size  Section
+	Obj/src_bootloader.o               0x00000000     df        0  *ABS*
+	Obj/src_main.o                     0x00000000     df        0  *ABS*
+	drivers_bt.o                       0x00000000     df        0  *ABS*
+	drivers_ifc.o                      0x00000000     df        0  *ABS*
+	drivers_iwdt.o                     0x00000000     df        0  *ABS*
+	drivers_pinctrl.o                  0x00000000     df        0  *ABS*
+	drivers_sys_clk.o                  0x00000000     df        0  *ABS*
+	drivers_sys_mem_init.o             0x00000000     df        0  *ABS*
+	drivers_sys_startup.o              0x00000000     df        0  *ABS*
+	drivers_sys_sys_clk.o              0x00000000     df        0  *ABS*
+	drivers_uart.o                     0x00000000     df        0  *ABS*
+	memcpy_fast.o                      0x00000000     df        0  *ABS*
+	memset_fast.o                      0x00000000     df        0  *ABS*
+	src_interrupt.o                    0x00000000     df        0  *ABS*
+	$d                                 0x00000000               0  .text
+	$t                                 0x00000108               0  .text
+	INIT_KERLE_STACK                   0x0000015a               0  .text
+	__to_main                          0x00000162               0  .text
+	__dummy                            0x000001a6               0  .text
+	$d                                 0x000001aa               0  .text
+	$d                                 0x000001c8               0  .text
+	$t                                 0x000001c8               0  .text
+	$d                                 0x00000270               0  .text
+	$t                                 0x00000270               0  .text
+	$d                                 0x000002ee               0  .text
+	$t                                 0x000002ee               0  .text
+	$d                                 0x0000030e               0  .text
+	$t                                 0x0000030e               0  .text
+	$d                                 0x0000032c               0  .text
+	$t                                 0x0000032c               0  .text
+	$d                                 0x0000033c               0  .text
+	$d                                 0x00000348               0  .text
+	$t                                 0x00000348               0  .text
+	$d                                 0x0000037c               0  .text
+	$d                                 0x00000384               0  .text
+	$t                                 0x00000384               0  .text
+	$d                                 0x000003cc               0  .text
+	$d                                 0x000003e0               0  .text
+	$t                                 0x000003e0               0  .text
+	$d                                 0x00000400               0  .text
+	$d                                 0x00000404               0  .text
+	$t                                 0x00000404               0  .text
+	$d                                 0x00000434               0  .text
+	$d                                 0x0000043c               0  .text
+	$t                                 0x0000043c               0  .text
+	$d                                 0x00000464               0  .text
+	$d                                 0x00000468               0  .text
+	$t                                 0x00000468               0  .text
+	$d                                 0x00000494               0  .text
+	$d                                 0x00000498               0  .text
+	$t                                 0x00000498               0  .text
+	$d                                 0x000004b4               0  .text
+	$d                                 0x000004b8               0  .text
+	$t                                 0x000004b8               0  .text
+	$d                                 0x0000053c               0  .text
+	$d                                 0x00000554               0  .text
+	$t                                 0x00000554               0  .text
+	$d                                 0x0000058c               0  .text
+	$t                                 0x0000058c               0  .text
+	$d                                 0x000005a4               0  .text
+	$d                                 0x000005ac               0  .text
+	$t                                 0x000005ac               0  .text
+	$d                                 0x000005dc               0  .text
+	$d                                 0x000005e8               0  .text
+	$t                                 0x000005e8               0  .text
+	$d                                 0x0000060c               0  .text
+	$d                                 0x00000610               0  .text
+	$t                                 0x00000610               0  .text
+	$d                                 0x00000628               0  .text
+	$d                                 0x0000062c               0  .text
+	$t                                 0x0000062c               0  .text
+	$d                                 0x00000680               0  .text
+	$d                                 0x00000694               0  .text
+	$t                                 0x00000694               0  .text
+	$d                                 0x000007b0               0  .text
+	$d                                 0x000007e8               0  .text
+	$t                                 0x000007e8               0  .text
+	$d                                 0x000007f2               0  .text
+	$t                                 0x000007f2               0  .text
+	$d                                 0x00000804               0  .text
+	$t                                 0x00000804               0  .text
+	$d                                 0x00000840               0  .text
+	$d                                 0x0000084c               0  .text
+	$t                                 0x0000084c               0  .text
+	$d                                 0x00000858               0  .text
+	$d                                 0x00000860               0  .text
+	$t                                 0x00000860               0  .text
+	$d                                 0x0000087c               0  .text
+	$d                                 0x00000880               0  .text
+	$t                                 0x00000880               0  .text
+	$d                                 0x000008dc               0  .text
+	$d                                 0x000008e8               0  .text
+	$t                                 0x000008e8               0  .text
+	$d                                 0x00000934               0  .text
+	$d                                 0x0000093c               0  .text
+	$t                                 0x0000093c               0  .text
+	apt_ifc_wr_nword.isra.1            0x00000948      F      296  .text
+	$d                                 0x00000948               0  .text
+	$t                                 0x00000948               0  .text
+	$d                                 0x00000a68               0  .text
+	$d                                 0x00000a70               0  .text
+	$t                                 0x00000a70               0  .text
+	$d                                 0x00000a80               0  .text
+	$d                                 0x00000a84               0  .text
+	$t                                 0x00000a84               0  .text
+	$d                                 0x00000b80               0  .text
+	$t                                 0x00000b80               0  .text
+	$d                                 0x00000ba8               0  .text
+	$t                                 0x00000ba8               0  .text
+	$d                                 0x00000bf0               0  .text
+	$d                                 0x00000bf4               0  .text
+	$t                                 0x00000bf4               0  .text
+	$d                                 0x00000c20               0  .text
+	$d                                 0x00000c28               0  .text
+	$t                                 0x00000c28               0  .text
+	$d                                 0x00000c4c               0  .text
+	apt_get_pin_name_addr              0x00000c50      F       68  .text
+	$d                                 0x00000c50               0  .text
+	$t                                 0x00000c50               0  .text
+	$d                                 0x00000c84               0  .text
+	$d                                 0x00000c94               0  .text
+	$t                                 0x00000c94               0  .text
+	$d                                 0x00000cd8               0  .text
+	$t                                 0x00000cd8               0  .text
+	$d                                 0x00000cec               0  .text
+	$t                                 0x00000cec               0  .text
+	$d                                 0x00000d10               0  .text
+	csp_set_clksrc                     0x00000d14      F       32  .text
+	$d                                 0x00000d14               0  .text
+	$t                                 0x00000d14               0  .text
+	$d                                 0x00000d34               0  .text
+	$t                                 0x00000d34               0  .text
+	$d                                 0x00000d7c               0  .text
+	$d                                 0x00000d94               0  .text
+	$t                                 0x00000d94               0  .text
+	$d                                 0x00000db4               0  .text
+	$d                                 0x00000db8               0  .text
+	$t                                 0x00000db8               0  .text
+	$d                                 0x00000dc8               0  .text
+	$t                                 0x00000dc8               0  .text
+	$d                                 0x00000dec               0  .text
+	$d                                 0x00000e00               0  .text
+	$t                                 0x00000e00               0  .text
+	$d                                 0x00000e18               0  .text
+	$d                                 0x00000e1c               0  .text
+	$t                                 0x00000e1c               0  .text
+	$d                                 0x00000e34               0  .text
+	$d                                 0x00000e38               0  .text
+	$t                                 0x00000e38               0  .text
+	$d                                 0x00000e3e               0  .text
+	$t                                 0x00000e3e               0  .text
+	$d                                 0x00000e44               0  .text
+	$t                                 0x00000e44               0  .text
+	$d                                 0x00000e4a               0  .text
+	$t                                 0x00000e4a               0  .text
+	wPinInfo.10733                     0x20000040      O        8  .bss
+
+	Global Symbols
+
+	Symbol Name                        Value        Type   Size  Section
+	vector_table                       0x00000000               0  .text
+	__start                            0x00000108               0  .text
+	__exit                             0x0000017c               0  .text
+	__fail                             0x00000196               0  .text
+	DummyHandler                       0x000001a8               0  .text
+	__memset_fast                      0x000001c8    w F      166  .text
+	memset                             0x000001c8    w F      166  .text
+	__memcpy_fast                      0x00000270    w F      126  .text
+	memcpy                             0x00000270    w F      126  .text
+	delayus_Bycode                     0x000002ee      F       32  .text
+	mdelay                             0x0000030e      F       30  .text
+	bootloader_clear_rec_buffer        0x0000032c      F       28  .text
+	bootloader_bt_irqhandler           0x00000348      F       60  .text
+	bootloader_prog_irqhandler         0x00000384      F       92  .text
+	bootloader_printf_init             0x000003e0      F       36  .text
+	bootloader_prog_init               0x00000404      F       56  .text
+	bootloader_send_ack                0x0000043c      F       44  .text
+	bootloader_send_back_num           0x00000468      F       48  .text
+	bootloader_send_back_str           0x00000498      F       32  .text
+	bootloader_program_flash           0x000004b8      F      156  .text
+	bootloader_wait_syncpin_release    0x00000554      F       56  .text
+	bootloader_cal_image_checknum      0x0000058c      F       32  .text
+	bootloader_program_verify          0x000005ac      F       60  .text
+	bootloader_program_option          0x000005e8      F       40  .text
+	bootloader_get_cmd_value           0x00000610      F       28  .text
+	bootloader_program_init            0x0000062c      F      104  .text
+	bootloader_program_loading         0x00000694      F      340  .text
+	bootloader_jump_to_app             0x000007e8      F       10  .text
+	bootloader_check_jump_addr         0x000007f2      F       16  .text
+	bootloader_jump_function           0x00000804      F       72  .text
+	bootloader_reset                   0x0000084c      F       20  .text
+	bootloader_system_init             0x00000860      F       32  .text
+	main                               0x00000880      F      104  .text
+	csi_bt_timer_init                  0x000008e8      F       84  .text
+	csi_bt_start                       0x0000093c      F       10  .text
+	csi_ifc_get_status                 0x00000a70      F       20  .text
+	csi_ifc_program                    0x00000a84      F      252  .text
+	delay_ums                          0x00000b80      F       40  .text
+	csi_iwdt_open                      0x00000ba8      F       76  .text
+	csi_iwdt_close                     0x00000bf4      F       52  .text
+	csi_iwdt_feed                      0x00000c28      F       40  .text
+	csi_pin_set_mux                    0x00000c94      F       68  .text
+	csi_pin_read                       0x00000cd8      F       20  .text
+	csi_hfosc_enable                   0x00000cec      F       40  .text
+	csi_bootloader_sysclk_config       0x00000d34      F       96  .text
+	soc_clk_enable                     0x00000d94      F       36  .text
+	csi_uart_putc                      0x00000db8      F       14  .text
+	__main                             0x00000dc8      F       56  .text
+	uart1_int_handler                  0x00000e00      F       28  .text
+	bt0_int_handler                    0x00000e1c      F       28  .text
+	MisalignedHandler                  0x00000e38      F        6  .text
+	AccessErrHandler                   0x00000e3e      F        6  .text
+	BreakPointHandler                  0x00000e44      F        6  .text
+	PendTrapHandler                    0x00000e4a      F        6  .text
+	_end_rodata                        0x00000e88               0  .rodata
+	_start_data                        0x20000000               0  .data
+	g_bFlashPgmDne                     0x20000000      O        1  .data
+	BT0                                0x20000004      O        4  .data
+	IFC                                0x20000008      O        4  .data
+	SYSCON                             0x2000000c      O        4  .data
+	UART1                              0x20000010      O        4  .data
+	UART2                              0x20000014      O        4  .data
+	_end_data                          0x20000018               0  .data
+	_bss_start                         0x20000018               0  .bss
+	byProgFailed                       0x20000018      O        1  .bss
+	hwCheckProTime                     0x2000001a      O        2  .bss
+	hwCheckTimeOutNum                  0x2000001c      O        2  .bss
+	wAppJumpAddr                       0x20000020      O        4  .bss
+	wCheckNum                          0x20000024      O        4  .bss
+	wHexEndAddr                        0x20000028      O        4  .bss
+	wHexStartAddr                      0x2000002c      O        4  .bss
+	wImageSize                         0x20000030      O        4  .bss
+	wIndx                              0x20000034      O        4  .bss
+	wRecBufLen                         0x20000038      O        4  .bss
+	byBootMode                         0x2000003c      O        1  .bss
+	byRwBuffer                         0x20000048      O      256  .bss
+	_ebss                              0x20000148               0  .bss
+	_end                               0x20000148               0  .bss
+	end                                0x20000148               0  .bss
+	__kernel_stack                     0x20001ff8               0  .text
+
+	(w:Weak    d:Deubg    F:Function    f:File name    O:Zero)
+
+
+======================================================================
+
+Memory Map of the image
+
+    Image Entry point : 0x00000108
+
+    Region ROM (Base: 0x00000000, Size: 0x00000ea0, Max: 0x00001000)
+
+    Base Addr    Size         Type   Attr      Idx   Section Name       Object
+    0x00000000   0x000001c8   Code   RO        605  .text          	drivers_sys_startup.o
+    0x000001c8   0x000000a6   Code   RO       1175  .text          	memset_fast.o
+    0x0000026e   0x00000002   PAD
+    0x00000270   0x0000007e   Code   RO       1185  .text          	memcpy_fast.o
+    0x000002ee   0x00000020   Code   RO         20  .text.delayus_Bycode	Obj/src_bootloader.o
+    0x0000030e   0x0000001e   Code   RO         22  .text.mdelay   	Obj/src_bootloader.o
+    0x0000032c   0x0000001c   Code   RO         24  .text.bootloader_clear_rec_buffer	Obj/src_bootloader.o
+    0x00000348   0x0000003c   Code   RO         26  .text.bootloader_bt_irqhandler	Obj/src_bootloader.o
+    0x00000384   0x0000005c   Code   RO         28  .text.bootloader_prog_irqhandler	Obj/src_bootloader.o
+    0x000003e0   0x00000024   Code   RO         32  .text.bootloader_printf_init	Obj/src_bootloader.o
+    0x00000404   0x00000038   Code   RO         34  .text.bootloader_prog_init	Obj/src_bootloader.o
+    0x0000043c   0x0000002c   Code   RO         36  .text.bootloader_send_ack	Obj/src_bootloader.o
+    0x00000468   0x00000030   Code   RO         38  .text.bootloader_send_back_num	Obj/src_bootloader.o
+    0x00000498   0x00000020   Code   RO         40  .text.bootloader_send_back_str	Obj/src_bootloader.o
+    0x000004b8   0x0000009c   Code   RO         42  .text.bootloader_program_flash	Obj/src_bootloader.o
+    0x00000554   0x00000038   Code   RO         44  .text.bootloader_wait_syncpin_release	Obj/src_bootloader.o
+    0x0000058c   0x00000020   Code   RO         46  .text.bootloader_cal_image_checknum	Obj/src_bootloader.o
+    0x000005ac   0x0000003c   Code   RO         48  .text.bootloader_program_verify	Obj/src_bootloader.o
+    0x000005e8   0x00000028   Code   RO         50  .text.bootloader_program_option	Obj/src_bootloader.o
+    0x00000610   0x0000001c   Code   RO         52  .text.bootloader_get_cmd_value	Obj/src_bootloader.o
+    0x0000062c   0x00000068   Code   RO         54  .text.bootloader_program_init	Obj/src_bootloader.o
+    0x00000694   0x00000154   Code   RO         56  .text.bootloader_program_loading	Obj/src_bootloader.o
+    0x000007e8   0x0000000a   Code   RO         58  .text.bootloader_jump_to_app	Obj/src_bootloader.o
+    0x000007f2   0x00000010   Code   RO         60  .text.bootloader_check_jump_addr	Obj/src_bootloader.o
+    0x00000802   0x00000002   PAD
+    0x00000804   0x00000048   Code   RO         62  .text.bootloader_jump_function	Obj/src_bootloader.o
+    0x0000084c   0x00000014   Code   RO         64  .text.bootloader_reset	Obj/src_bootloader.o
+    0x00000860   0x00000020   Code   RO         66  .text.bootloader_system_init	Obj/src_bootloader.o
+    0x00000880   0x00000068   Code   RO         99  .text.startup.main	Obj/src_main.o
+    0x000008e8   0x00000054   Code   RO        281  .text.csi_bt_timer_init	drivers_bt.o
+    0x0000093c   0x0000000a   Code   RO        285  .text.csi_bt_start	drivers_bt.o
+    0x00000946   0x00000002   PAD
+    0x00000948   0x00000128   Code   RO        360  .text.apt_ifc_wr_nword.isra.1	drivers_ifc.o
+    0x00000a70   0x00000014   Code   RO        366  .text.csi_ifc_get_status	drivers_ifc.o
+    0x00000a84   0x000000fc   Code   RO        368  .text.csi_ifc_program	drivers_ifc.o
+    0x00000b80   0x00000028   Code   RO        390  .text.delay_ums	drivers_iwdt.o
+    0x00000ba8   0x0000004c   Code   RO        394  .text.csi_iwdt_open	drivers_iwdt.o
+    0x00000bf4   0x00000034   Code   RO        396  .text.csi_iwdt_close	drivers_iwdt.o
+    0x00000c28   0x00000028   Code   RO        398  .text.csi_iwdt_feed	drivers_iwdt.o
+    0x00000c50   0x00000044   Code   RO        428  .text.apt_get_pin_name_addr	drivers_pinctrl.o
+    0x00000c94   0x00000044   Code   RO        434  .text.csi_pin_set_mux	drivers_pinctrl.o
+    0x00000cd8   0x00000014   Code   RO        454  .text.csi_pin_read	drivers_pinctrl.o
+    0x00000cec   0x00000028   Code   RO        505  .text.csi_hfosc_enable	drivers_sys_clk.o
+    0x00000d14   0x00000020   Code   RO        618  .text.csp_set_clksrc	drivers_sys_sys_clk.o
+    0x00000d34   0x00000060   Code   RO        622  .text.csi_bootloader_sysclk_config	drivers_sys_sys_clk.o
+    0x00000d94   0x00000024   Code   RO        626  .text.soc_clk_enable	drivers_sys_sys_clk.o
+    0x00000db8   0x0000000e   Code   RO        676  .text.csi_uart_putc	drivers_uart.o
+    0x00000dc6   0x00000002   PAD
+    0x00000dc8   0x00000038   Code   RO        873  .text.__main   	drivers_sys_mem_init.o
+    0x00000e00   0x0000001c   Code   RO        955  .text.uart1_int_handler	src_interrupt.o
+    0x00000e1c   0x0000001c   Code   RO        957  .text.bt0_int_handler	src_interrupt.o
+    0x00000e38   0x00000006   Code   RO       1021  .text.MisalignedHandler	src_interrupt.o
+    0x00000e3e   0x00000006   Code   RO       1025  .text.AccessErrHandler	src_interrupt.o
+    0x00000e44   0x00000006   Code   RO       1027  .text.BreakPointHandler	src_interrupt.o
+    0x00000e4a   0x00000006   Code   RO       1039  .text.PendTrapHandler	src_interrupt.o
+    0x00000e50   0x00000004   Data   RO         67  .rodata        	Obj/src_bootloader.o
+    0x00000e54   0x00000011   Data   RO         78  .rodata.bootloader_jump_function.str1.1	Obj/src_bootloader.o
+    0x00000e65   0x00000016   Data   RO         79  .rodata.bootloader_program_loading.str1.1	Obj/src_bootloader.o
+    0x00000e7b   0x00000006   Data   RO         80  .rodata.bootloader_program_verify.str1.1	Obj/src_bootloader.o
+    0x00000e81   0x00000006   Data   RO        101  .rodata.main.str1.1	Obj/src_main.o
+    0x00000e87   0x00000001   PAD
+
+    Region RAM (Base: 0x20000000, Size: 0x00000148, Max: 0x00002000)
+
+    Base Addr    Size         Type   Attr      Idx   Section Name       Object
+    0x20000000   0x00000001   Data   RW        371  .data.g_bFlashPgmDne	drivers_ifc.o
+    0x20000001   0x00000003   PAD
+    0x20000004   0x00000004   Data   RW        539  .data.BT0      	drivers_sys_devices.o
+    0x20000008   0x00000004   Data   RW        559  .data.IFC      	drivers_sys_devices.o
+    0x2000000c   0x00000004   Data   RW        567  .data.SYSCON   	drivers_sys_devices.o
+    0x20000010   0x00000004   Data   RW        570  .data.UART1    	drivers_sys_devices.o
+    0x20000014   0x00000004   Data   RW        571  .data.UART2    	drivers_sys_devices.o
+    0x20000018   0x00000001   Zero   RW         68  .bss.byProgFailed	Obj/src_bootloader.o
+    0x20000019   0x00000001   PAD
+    0x2000001a   0x00000002   Zero   RW         69  .bss.hwCheckProTime	Obj/src_bootloader.o
+    0x2000001c   0x00000002   Zero   RW         70  .bss.hwCheckTimeOutNum	Obj/src_bootloader.o
+    0x2000001e   0x00000002   PAD
+    0x20000020   0x00000004   Zero   RW         71  .bss.wAppJumpAddr	Obj/src_bootloader.o
+    0x20000024   0x00000004   Zero   RW         72  .bss.wCheckNum 	Obj/src_bootloader.o
+    0x20000028   0x00000004   Zero   RW         73  .bss.wHexEndAddr	Obj/src_bootloader.o
+    0x2000002c   0x00000004   Zero   RW         74  .bss.wHexStartAddr	Obj/src_bootloader.o
+    0x20000030   0x00000004   Zero   RW         75  .bss.wImageSize	Obj/src_bootloader.o
+    0x20000034   0x00000004   Zero   RW         76  .bss.wIndx     	Obj/src_bootloader.o
+    0x20000038   0x00000004   Zero   RW         77  .bss.wRecBufLen	Obj/src_bootloader.o
+    0x2000003c   0x00000001   Zero   RW        100  .bss.byBootMode	Obj/src_main.o
+    0x2000003d   0x00000003   PAD
+    0x20000040   0x00000008   Zero   RW        471  .bss.wPinInfo.10733	drivers_pinctrl.o
+    0x20000048   0x00000100   Zero   RW         94  COMMON         	Obj/src_bootloader.o
+
+    Region *default* (Base: 0x00000000, Size: 0x00000000, Max: 0xffffffff)
+
+
+======================================================================
+
+Image component sizes
+
+       Code    RO Data    RW Data    ZI Data      Debug   Object Name
+
+          0          0          0          0          0   linker stubs
+       1424         49          0        289     145674   Obj/src_bootloader.o
+        104          6          0          1     123537   Obj/src_main.o
+	------------------------------------------------------------
+       1528         55          0        290     269211   Object Totals
+          8          1          3          6          0   Pad
+          0          0          0          0          0   LD_GEN
+
+	------------------------------------------------------------
+    [Library Name]: d:/c-sky/cdkrepo/toolchain/ckv2elfminilib/v3.10.29/r/bin/../lib/gcc/csky-elfabiv2/6.3.0/../../../../csky-elfabiv2/lib/ck802\libsemi.a
+	------------------------------------------------------------
+       Code    RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+          0          0          0          0          0   rewind.o
+          0          0          0          0          0   exit.o
+          0          0          0          0          0   fclose.o
+          0          0          0          0          0   syscalls.o
+          0          0          0          0          0   fopen.o
+          0          0          0          0          0   fwrite.o
+          0          0          0          0          0   ftell.o
+          0          0          0          0          0   fputs.o
+          0          0          0          0          0   fgetc.o
+          0          0          0          0          0   fputc.o
+          0          0          0          0          0   fread.o
+          0          0          0          0          0   fseek.o
+          0          0          0          0          0   do_semi.o
+	------------------------------------------------------------
+          0          0          0          0          0   Library Totals
+          0          0          0          0          0   Pad
+          0          0          0          0          0   LD_GEN
+
+	------------------------------------------------------------
+    [Library Name]: Obj\libapt32f110x_chip.a
+	------------------------------------------------------------
+       Code    RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         94          0          0          0     133548   drivers_bt.o
+          0          0          0          0          0   drivers_hwdiv.o
+        568          0          1          0     129258   drivers_ifc.o
+        208          0          0          0     129909   drivers_iwdt.o
+        156          0          0          8     139645   drivers_pinctrl.o
+         40          0          0          0     135899   drivers_sys_clk.o
+          0          0         20          0     123294   drivers_sys_devices.o
+          0          0          0          0          0   drivers_sys_irq.o
+        456          0          0          0        359   drivers_sys_startup.o
+        164          0          0          0     129793   drivers_sys_sys_clk.o
+         14          0          0          0     137624   drivers_uart.o
+          0          0          0          0          0   drivers_dma.o
+          0          0          0          0          0   drivers_etb.o
+          0          0          0          0          0   drivers_lpt.o
+          0          0          0          0          0   drivers_ringbuf.o
+         56          0          0          0     122644   drivers_sys_mem_init.o
+          0          0          0          0          0   drivers_sys_tick.o
+	------------------------------------------------------------
+       1756          0         21          8    1181973   Library Totals
+          0          0          0          0          0   Pad
+          0          0          0          0          0   LD_GEN
+
+	------------------------------------------------------------
+    [Library Name]: Obj\libapt32f110x_evb.a
+	------------------------------------------------------------
+       Code    RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+          0          0          0          0          0   src_board_config.o
+         80          0          0          0     127764   src_interrupt.o
+	------------------------------------------------------------
+         80          0          0          0     127764   Library Totals
+          0          0          0          0          0   Pad
+          0          0          0          0          0   LD_GEN
+
+	------------------------------------------------------------
+    [Library Name]: Obj\libapt_console.a
+	------------------------------------------------------------
+       Code    RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+          0          0          0          0          0   src_sys_console.o
+	------------------------------------------------------------
+          0          0          0          0          0   Library Totals
+          0          0          0          0          0   Pad
+          0          0          0          0          0   LD_GEN
+
+	------------------------------------------------------------
+    [Library Name]: d:/c-sky/cdkrepo/toolchain/ckv2elfminilib/v3.10.29/r/bin/../lib/gcc/csky-elfabiv2/6.3.0/ck802\libgcc.a
+	------------------------------------------------------------
+       Code    RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+          0          0          0          0          0   _csky_case_uqi.o
+          0          0          0          0          0   _muldi3.o
+          0          0          0          0          0   _lshrdi3.o
+          0          0          0          0          0   _divdi3.o
+          0          0          0          0          0   _udivdi3.o
+          0          0          0          0          0   _clz.o
+	------------------------------------------------------------
+          0          0          0          0          0   Library Totals
+          0          0          0          0          0   Pad
+          0          0          0          0          0   LD_GEN
+
+	------------------------------------------------------------
+    [Library Name]: d:/c-sky/cdkrepo/toolchain/ckv2elfminilib/v3.10.29/r/bin/../lib/gcc/csky-elfabiv2/6.3.0/../../../../csky-elfabiv2/lib/ck802\libc.a
+	------------------------------------------------------------
+       Code    RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+          0          0          0          0          0   minilibc_init.o
+          0          0          0          0          0   critical.o
+          0          0          0          0          0   stdinit.o
+          0          0          0          0          0   malloc.o
+        166          0          0          0          0   memset_fast.o
+          0          0          0          0          0   strlen_fast.o
+        126          0          0          0          0   memcpy_fast.o
+	------------------------------------------------------------
+        292          0          0          0          0   Library Totals
+          0          0          0          0          0   Pad
+          0          0          0          0          0   LD_GEN
+
+	------------------------------------------------------------
+
+======================================================================
+
+
+       Code    RO Data    RW Data    ZI Data      Debug
+       3664         56         24        304    1578948   Grand Totals
+       3664         56         24        304    1578948   Elf Image Totals
+       3664         56         24          0          0   ROM Totals
+
+======================================================================
+
+Total	RO	Size (Code + RO Data)				3720 (  3.63kB)
+Total	RW	Size (RW Data + ZI Data)			328 (  0.32kB)
+Total	ROM	Size (Code + RO Data + RW Data)		3744 (  3.66kB)
+
+======================================================================
